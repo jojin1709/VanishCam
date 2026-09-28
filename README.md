@@ -11,6 +11,7 @@
 <br/>
 
 [![Manifest](https://img.shields.io/badge/Manifest-V3-7B61FF?style=flat-square&labelColor=161B22)](https://developer.chrome.com/docs/extensions/)
+[![Website](https://img.shields.io/badge/Website-jojin1709.github.io%2FVanishCam-7B61FF?style=flat-square&labelColor=161B22)](https://jojin1709.github.io/VanishCam/)
 [![Chrome](https://img.shields.io/badge/Chrome-100%2B-7B61FF?style=flat-square&labelColor=161B22)](https://www.google.com/chrome/)
 [![Runs](https://img.shields.io/badge/Runs-100%25%20Local-2EA043?style=flat-square&labelColor=161B22)](#privacy)
 [![Data](https://img.shields.io/badge/Data-Never_Sent-2EA043?style=flat-square&labelColor=161B22)](#privacy)
@@ -35,19 +36,36 @@
 
 > [!TIP]
 > **TL;DR:** install it, click `capture empty room`, step out of frame for 3 seconds, sit back down — then snap your fingers to disappear. Snap again to come back.
+>
+> **🌐 Showcase site:** [jojin1709.github.io/VanishCam](https://jojin1709.github.io/VanishCam/)
+
+---
+
+## See it in action
+
+<div align="center">
+<img src="assets/demo.png" alt="VanishCam before and after: the person dissolves into particles, the empty room stays" width="900">
+<br/>
+<sub>Before → <b>snap!</b> → after. The left panel is you, the right panel is the empty room you captured.</sub>
+</div>
+
+Demo videos live on the [showcase site](https://jojin1709.github.io/VanishCam/) and in [`docs/videos/`](docs/videos/README.md).
 
 ---
 
 ## Table of Contents
 
 - [What is VanishCam?](#what-is-vanishcam)
+- [See it in action](#see-it-in-action)
 - [Install](#install)
 - [How to use it](#how-to-use-it)
+- [Settings in the panel](#settings-in-the-panel)
 - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Troubleshooting](#troubleshooting)
 - [How it works](#how-it-works)
 - [Privacy](#privacy)
 - [Honest scope](#honest-scope)
+- [Testing](#testing)
 - [License](#license)
 - [Contributing](#contributing)
 - [Community](#community)
@@ -105,12 +123,33 @@ It works fine offline (aside from the call itself).
 
 ---
 
+## Settings in the panel
+
+Click the status text to open the panel:
+
+| Control | What it does |
+|---|---|
+| `capture empty room` | takes the background photo (3-second countdown) |
+| `vanish / return` | manual trigger if the snap isn't heard |
+| `mic: on / off` | turns snap listening on/off and **releases the microphone** when off |
+| `forget saved room` | deletes the locally stored empty-room photo |
+| `snap sensitivity` | how loud a snap must be (tuned per room/mic) |
+| `dissolve duration` | 0.8s – 4s dissolve/return animation |
+| `particle amount` | how dense the particle cloud is (0.3x – 2x) |
+
+All settings are stored in your browser only (`localStorage` on `meet.google.com`) — including the saved empty-room photo, so a reload doesn't force a recapture. `forget saved room` wipes it.
+
+---
+
 ## Keyboard shortcuts
 
 | Shortcut | Action |
 |:---:|---|
 | `Ctrl` + `Shift` + `X` | Vanish / return |
 | `Ctrl` + `Shift` + `H` | Hide / show the pill button |
+
+Both work **browser-wide** (even when the Meet tab isn't focused), via the Chrome
+commands API. Rebind them at `chrome://extensions/shortcuts`.
 
 ---
 
@@ -155,6 +194,7 @@ Everything runs inside the Meet tab as a content script — no background servic
 - **No video leaves your machine** — camera frames are processed in the page and never sent anywhere.
 - **No audio leaves your machine** — the microphone is only used to listen for the finger snap itself; audio is never stored or recorded.
 - **No server** — this extension talks to no backend, has no account, no telemetry, and no analytics.
+- **Stored locally** — your settings and the captured empty-room photo live in `localStorage` on `meet.google.com` only; clear them any time with `forget saved room` (or clear site data).
 - **Works offline** — aside from the Meet call itself, nothing requires an internet connection.
 
 ---
@@ -165,10 +205,26 @@ Everything runs inside the Meet tab as a content script — no background servic
 |---|---|
 | **Snap detection** | Audio-based; may need the sensitivity slider tuned for your mic/room |
 | **Empty room** | A single captured photo — lighting changes will show |
-| **Works on** | Google Meet in Chrome (`meet.google.com` only) |
+| **Works on** | Chrome 111+, Edge, Brave and other Chromium browsers (`meet.google.com` only). **Firefox is not supported** — it lacks the MAIN-world content-script API this uses. |
 | **Distribution** | Loaded unpacked via `Developer mode` — not on the Chrome Web Store |
 
 These limitations are surfaced in the UI and docs rather than hidden.
+
+---
+
+## Testing
+
+Every push runs [CI](.github/workflows/ci.yml): manifest validation, file presence,
+JS syntax checks and a **privacy guard** (fails the build if any extension script
+gains a `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon` call).
+
+```bash
+node scripts/validate.js   # same checks locally
+```
+
+Manual verification checklist: **[docs/TEST_PLAN.md](docs/TEST_PLAN.md)** *(planned)*.
+Manual smoke test: load unpacked → pill appears → capture room → snap → vanish →
+snap → return → `forget saved room` clears it.
 
 ---
 
