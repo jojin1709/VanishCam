@@ -42,6 +42,7 @@
   }
 
   // ---------- video placeholders: hide the <video> until a file exists ----------
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-video-slot]').forEach((slot) => {
     const video = slot.querySelector('video');
     if (!video) return;
@@ -54,6 +55,50 @@
       video.load();
     } else {
       missing();
+    }
+
+    // hero: silent autoplay, no player chrome, pause when scrolled away
+    if (slot.hasAttribute('data-autoplay')) {
+      if (reduced) {
+        video.removeAttribute('autoplay');
+        video.setAttribute('controls', '');
+      } else {
+        const tryPlay = () => video.play().catch(() => {});
+        video.addEventListener('loadedmetadata', tryPlay);
+        tryPlay();
+
+        // pause/resume based on visibility (saves battery + decoding)
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+              if (slot.classList.contains('missing')) return;
+              if (e.isIntersecting) video.play().catch(() => {});
+              else video.pause();
+            });
+          }, { threshold: 0.25 }).observe(slot);
+        }
+
+        // sound toggle button
+        const btn = slot.querySelector('[data-sound]');
+        if (btn) {
+          const sync = () => {
+            btn.textContent = video.muted ? '🔇' : '🔊';
+            btn.setAttribute('aria-label', video.muted ? 'Turn sound on' : 'Mute');
+          };
+          btn.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            video.muted = !video.muted;
+            if (!video.muted) video.play().catch(() => {});
+            sync();
+          });
+          sync();
+          // first interaction anywhere unmutes if the user really watches
+          video.addEventListener('click', () => {
+            if (video.muted) { video.muted = false; sync(); }
+            else video.pause();
+          });
+        }
+      }
     }
   });
 

@@ -126,6 +126,18 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 850; letter-spacing: -.
   box-shadow: 0 30px 70px -40px rgba(0, 0, 0, .9);
 }
 .video-card video { width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
+/* hero: clean, no native player chrome */
+.video-hero { box-shadow: 0 40px 90px -45px rgba(124, 110, 255, .55); }
+.video-hero video { object-fit: cover; }
+.sound-btn {
+  position: absolute; right: 14px; bottom: 14px; z-index: 3;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(10, 11, 16, .72); border: 1px solid rgba(255, 255, 255, .18);
+  color: #fff; font-size: 1rem; cursor: pointer; backdrop-filter: blur(8px);
+  display: grid; place-items: center; transition: .18s; opacity: .85;
+}
+.sound-btn:hover { opacity: 1; border-color: var(--violet); transform: scale(1.06); }
+.video-card.missing .sound-btn { display: none; }
 .video-fallback {
   position: absolute; inset: 0; display: none; place-content: center; text-align: center;
   background:

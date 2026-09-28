@@ -63,15 +63,15 @@
       <h2 class="reveal">See it in action</h2>
       <p class="lead reveal">One snap to disappear. One snap to come back.</p>
 
-      <!-- ── MAIN DEMO VIDEO ─────────────────────────────────────────────
+      <!-- ── MAIN DEMO VIDEO (autoplays, muted, no player chrome) ────────
            Drop your file at:  docs/videos/hero.mp4
-           (any format works; mp4/h.264 is the safest for all browsers)
-           Poster image:       docs/videos/hero-poster.jpg  (optional)
+           Optional poster:    docs/videos/hero-poster.jpg
       ─────────────────────────────────────────────────────────────────── -->
-      <div class="video-card reveal" data-video-slot>
-        <video controls playsinline preload="metadata" poster="">
+      <div class="video-card video-hero reveal" data-video-slot data-autoplay>
+        <video autoplay muted loop playsinline preload="auto">
           <source src="videos/hero.mp4" type="video/mp4">
         </video>
+        <button class="sound-btn" type="button" data-sound aria-label="Turn sound on">🔇</button>
         <div class="video-fallback">
           <span>🎬</span>
           <p>Demo video coming soon</p>
