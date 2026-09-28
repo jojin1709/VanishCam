@@ -44,18 +44,17 @@
 ## See it in action
 
 <div align="center">
-<video src="docs/videos/hero.mp4" width="900" controls autoplay loop muted playsinline></video>
-<br/>
-<sub>Live demo — snap to vanish, snap again to return.</sub>
-</div>
 
-<div align="center">
+**[▶ Watch the live demo](https://jojin1709.github.io/VanishCam/#demo)** — snap to vanish, snap again to return.
+
+<br/><br/>
+
 <img src="assets/demo.png" alt="VanishCam before and after: the person dissolves into particles, the empty room stays" width="900">
 <br/>
 <sub>Before → <b>snap!</b> → after. The left panel is you, the right panel is the empty room you captured.</sub>
 </div>
 
-Demo videos live on the [showcase site](https://jojin1709.github.io/VanishCam/) and in [`docs/videos/`](docs/videos/README.md).
+The full video plays on the [showcase site](https://jojin1709.github.io/VanishCam/#demo) and is also attached to the [release](https://github.com/jojin1709/VanishCam/releases) as `hero.mp4`.
 
 ---
 
