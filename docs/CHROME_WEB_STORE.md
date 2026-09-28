@@ -28,7 +28,7 @@ CI already builds this folder as the `VanishCam-extension` artifact
 | Asset | Size | Source |
 |---|---|---|
 | Icon 128×128 | 128×128 | `icons/icon128.png` |
-| Small promo tile | 440×280 | crop from `assets/demo.png` |
+| Small promo tile | 440×280 | crop from `assets/demo.jpg` |
 | Screenshots | 1280×800 or 640×400 (min 5, max 5) | your Meet screen recordings |
 | Store icon | 128×128 | `icons/icon128.png` |
 

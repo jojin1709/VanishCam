@@ -49,9 +49,9 @@
 
 <br/><br/>
 
-<img src="assets/demo.png" alt="VanishCam before and after: the person dissolves into particles, the empty room stays" width="900">
+<img src="assets/demo.jpg" alt="VanishCam in Google Meet: before, both on camera — after, one has vanished into particles" width="900">
 <br/>
-<sub>Before → <b>snap!</b> → after. The left panel is you, the right panel is the empty room you captured.</sub>
+<sub>Before → <b>snap!</b> → after. Both on camera → one has vanished, the room stays.</sub>
 </div>
 
 The full video plays on the [showcase site](https://jojin1709.github.io/VanishCam/#demo) and is also attached to the [release](https://github.com/jojin1709/VanishCam/releases) as `hero.mp4`.

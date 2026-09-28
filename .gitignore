@@ -21,3 +21,6 @@ dist/
 
 # raw screen recordings (processed copies live in docs/videos/)
 video/
+
+# raw uploaded media
+image/

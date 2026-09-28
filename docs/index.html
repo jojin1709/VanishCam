@@ -7,7 +7,7 @@
   <meta name="description" content="VanishCam is a free Chrome extension that dissolves your camera feed into particles on a finger snap — you vanish from your own Google Meet video. 100% local, no server, no data sent.">
   <meta property="og:title" content="VanishCam — snap and vanish from your video call">
   <meta property="og:description" content="Free Chrome extension. Snap your fingers, dissolve into particles, come back when you snap again. Everything runs locally in your browser.">
-  <meta property="og:image" content="https://jojin1709.github.io/VanishCam/assets/demo.png">
+  <meta property="og:image" content="https://jojin1709.github.io/VanishCam/assets/demo.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/icons/icon128.png">
   <link rel="stylesheet" href="css/style.css">
@@ -78,8 +78,8 @@
         </div>
       </div>
 
-      <!-- ── EXTRA CLIPS (optional, delete this block if unused) ─────────
-           docs/videos/clip-1.mp4  ·  docs/videos/clip-2.mp4
+      <!-- ── EXTRA CLIPS ────────────────────────────────────────────────
+           docs/videos/clip-1.mp4 · clip-2.mp4 · clip-3.mp4
       ─────────────────────────────────────────────────────────────────── -->
       <div class="video-grid">
         <div class="video-card reveal" data-video-slot>
@@ -94,12 +94,18 @@
           </video>
           <div class="video-fallback"><span>🎬</span><p>Clip 2 — coming soon</p></div>
         </div>
+        <div class="video-card reveal" data-video-slot>
+          <video controls playsinline preload="metadata">
+            <source src="videos/clip-3.mp4" type="video/mp4">
+          </video>
+          <div class="video-fallback"><span>🎬</span><p>Clip 3 — coming soon</p></div>
+        </div>
       </div>
 
       <!-- Screenshot-style showcase (static, always visible) -->
       <figure class="shot reveal">
-        <img src="assets/demo.png" alt="VanishCam before and after: the person dissolves into particles, the empty room stays" loading="lazy">
-        <figcaption>Before → snap! → after. The empty room is captured by you, one click.</figcaption>
+        <img src="assets/demo.jpg" alt="VanishCam in Google Meet: before, both on camera — after, one has vanished into particles" loading="lazy">
+        <figcaption>Before → snap! → after. Both on camera → one has vanished, the room stays.</figcaption>
       </figure>
     </div>
   </section>
