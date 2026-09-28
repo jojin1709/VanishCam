@@ -13,7 +13,8 @@
 [![Local Only](https://img.shields.io/badge/100%25-Local-0D1117?style=flat-square&labelColor=0D1117&color=2EA043)](#privacy)
 [![No Server](https://img.shields.io/badge/No-Cloud_No_Account-0D1117?style=flat-square&labelColor=0D1117&color=2EA043)](#privacy)
 [![Privacy](https://img.shields.io/badge/Zero-Data_Sent-0D1117?style=flat-square&labelColor=0D1117&color=2EA043)](#privacy)
-[![License](https://img.shields.io/badge/Open-Source-0D1117?style=flat-square&labelColor=0D1117&color=7B61FF)](#license)
+[![License](https://img.shields.io/badge/All_Rights_Reserved-0D1117?style=flat-square&labelColor=0D1117&color=7B61FF)](#license)
+[![Private](https://img.shields.io/badge/No-Forks_Published-0D1117?style=flat-square&labelColor=0D1117&color=2EA043)](#license)
 
 <br/>
 
@@ -47,6 +48,8 @@
 - [Privacy](#privacy)
 - [Honest scope](#honest-scope)
 - [License](#license)
+- [Contributing](#contributing)
+- [Community](#community)
 - [Support](#support)
 
 ---
@@ -169,13 +172,58 @@ These limitations are surfaced in the UI and docs rather than hidden.
 
 ## License
 
-Free and open-source. Fork it, use it, improve it.
+> [!WARNING]
+> **Not open source. Copyright (c) 2026 JOJIN JOHN — All rights reserved.**
+> See [LICENSE.txt](LICENSE.txt) for the full terms.
+
+| You can | You cannot (without permission) |
+|---|---|
+| Read and review the source code | Copy or re-upload this code anywhere |
+| Download the official release and use it personally | Modify, rebrand, or create derivative works |
+| Report bugs and suggest features | Use any part of this code in your own project |
+| Fix something in a **private** fork | Publish a fork, port, or rebrand |
+
+Permission for any use beyond personal use of the official release must be
+requested in writing from the copyright holder —
+[github.com/jojin1709](https://github.com/jojin1709). No response means no
+permission.
+
+Every copy, fork, and derivative of this work remains the property of
+JOJIN JOHN.
+
+---
+
+## Contributing
+
+Bugs and feature ideas are welcome — read
+**[CONTRIBUTING.md](CONTRIBUTING.md)** first.
+
+- 🐛 [Bug report](.github/ISSUE_TEMPLATE/bug_report.md)
+- 💡 [Feature request](.github/ISSUE_TEMPLATE/feature_request.md)
+- 🔃 [Pull request checklist](.github/PULL_REQUEST_TEMPLATE.md)
+
+Pull requests are accepted case by case; never ship this code, or a
+modification of it, as your own.
+
+---
+
+## Community
+
+| Document | What's in it |
+|---|---|
+| [Code of Conduct](CODE_OF_CONDUCT.md) | the standards everyone here agrees to |
+| [Contributing](CONTRIBUTING.md) | how to report, propose, and submit changes |
+| [Security policy](SECURITY.md) | how to report a vulnerability **privately** |
+| [Releases](https://github.com/jojin1709/VanishCam/releases) | download the latest installable ZIP |
+
+> [!IMPORTANT]
+> Security issues go through [private advisory reporting](https://github.com/jojin1709/VanishCam/security/advisories/new) — never a public issue.
 
 ---
 
 ## Support
 
-Free and open-source. If it saves you time, ⭐ **star the repo** — it helps others discover the project.
+If it saves you time, ⭐ **star the repo** — it helps others discover the project.
 
 <div align="center">
 

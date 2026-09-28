@@ -1,0 +1,94 @@
+VanishCam
+Copyright (c) 2026 JOJIN JOHN. All rights reserved.
+
+https://github.com/jojin1709/VanishCam
+
+------------------------------------------------------------------------
+1. WHAT THIS LICENSE IS
+------------------------------------------------------------------------
+
+This software is proprietary and is NOT open source. No open-source
+license (MIT, GPL, Apache, BSD, etc.) applies to this repository.
+
+The copyright holder (JOJIN JOHN) retains ALL rights that are not
+expressly granted below.
+
+------------------------------------------------------------------------
+2. WHAT YOU MAY DO (no permission needed)
+------------------------------------------------------------------------
+
+a) View and read the source code on GitHub.
+b) Download the official release ZIP and install the extension in your
+   own copy of Google Chrome for your own personal use.
+c) Report bugs and suggest features through this repository's issue
+   trackers.
+d) Fork this repository on GitHub, provided the fork remains PRIVATE
+   and is never published, redistributed, or made publicly available.
+
+------------------------------------------------------------------------
+3. WHAT YOU MAY NOT DO (permission required)
+------------------------------------------------------------------------
+
+Without the prior written permission of the copyright holder, you may
+not, in whole or in part:
+
+a) Copy, duplicate, or re-upload this code, in any form, to any other
+   repository, website, marketplace, store, or platform.
+b) Redistribute, publish, sell, license, rent, or otherwise make the
+   software available to any third party.
+c) Modify, adapt, translate, derive from, or create derivative works
+   of this software, including "remixes", ports, renames, or
+   rebrands.
+d) Remove, alter, or obscure any copyright, license, or attribution
+   notice.
+e) Use any part of this code in your own project, product, portfolio,
+   assignment, or commercial work.
+f) Submit this code, or derivative works of it, to any app store,
+   extension marketplace, or package registry.
+g) Claim authorship or ownership of this work.
+
+------------------------------------------------------------------------
+4. PERMISSION
+------------------------------------------------------------------------
+
+Permission for any use not listed in Section 2 may be requested from
+the copyright holder:
+
+    GitHub: https://github.com/jojin1709
+
+Permission is granted or denied at the sole discretion of the
+copyright holder. Silence is not consent. Absence of a response is
+denial.
+
+------------------------------------------------------------------------
+5. CONTRIBUTIONS
+------------------------------------------------------------------------
+
+By submitting a contribution (issue, pull request, patch, or any other
+material) you:
+
+a) Confirm the contribution is your original work, or that you have
+   the right to submit it.
+b) Grant the copyright holder a perpetual, irrevocable, worldwide,
+   royalty-free, transferable licence to use, modify, and
+   redistribute that contribution as part of this software.
+c) Understand that your contribution may be modified, attributed, or
+   discarded at the copyright holder's discretion.
+
+------------------------------------------------------------------------
+6. NO WARRANTY / LIABILITY
+------------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR
+ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+The software listens to your microphone and processes your camera
+feed locally. You are responsible for complying with the laws, meeting
+policies, and consent requirements of your own jurisdiction and call
+participants.
+
+END OF TERMS
