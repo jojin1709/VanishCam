@@ -8,12 +8,48 @@
 
   const WORK_W = 480;          // width of the low-res mask
   const DIFF_T = 70;           // colour difference that counts as "person"
-  const DURATION = 2000;       // ms for the dissolve
   const BAND = 0.035;          // softness of the dissolve edge (small = crisp grains)
   const P_MIN = -0.05;
   const P_MAX = 1.05;
   const MAX_PARTICLES = 4500;
   const BG_FRAMES = 14;        // frames averaged for the empty room photo
+
+  // dissolve settings, persisted in this browser only
+  S.fx = { dur: 2000, dens: 1 };
+  try {
+    const dv = parseFloat(localStorage.getItem('snap.dur'));
+    const nv = parseFloat(localStorage.getItem('snap.dens'));
+    if (dv >= 800 && dv <= 4000) S.fx.dur = dv;
+    if (nv >= 0.3 && nv <= 2) S.fx.dens = nv;
+  } catch (e) { /* storage can be blocked */ }
+  S.setFx = (k, v) => {
+    S.fx[k] = v;
+    try { localStorage.setItem(k === 'dur' ? 'snap.dur' : 'snap.dens', String(v)); } catch (e) { /* ignore */ }
+  };
+
+  // the empty-room photo is kept locally so a reload does not need a recapture
+  S.saveBg = (canvas) => {
+    try {
+      const w = 960;
+      const h = Math.max(2, Math.round((w * canvas.height) / canvas.width));
+      const c = mkCanvas(w, h);
+      c.getContext('2d').drawImage(canvas, 0, 0, w, h);
+      localStorage.setItem('snap.bg', c.toDataURL('image/jpeg', 0.65));
+      return true;
+    } catch (e) { return false; }
+  };
+  S.loadBg = (cb) => {
+    try {
+      const url = localStorage.getItem('snap.bg');
+      if (!url) return false;
+      const im = new Image();
+      im.onload = () => cb(im);
+      im.src = url;
+      return true;
+    } catch (e) { return false; }
+  };
+  S.clearBg = () => { try { localStorage.removeItem('snap.bg'); } catch (e) { /* ignore */ } };
+
 
   function mkCanvas(w, h) {
     const c = document.createElement('canvas');
@@ -137,6 +173,7 @@
       }
       if (!sh.bg || sh.bg.width !== W || sh.bg.height !== H) sh.bg = mkCanvas(W, H);
       sh.bg.getContext('2d').putImageData(out, 0, 0);
+      S.saveBg(sh.bg);
       sh.bgVer++;
       sh.mode = 'live';
       this.parts.length = 0;
@@ -315,7 +352,7 @@
     transition(now) {
       const { WW, HH, W, H, ctx, sh } = this;
       const vanishing = sh.mode === 'vanishing';
-      const t = Math.min(1, (now - this.t0) / DURATION);
+      const t = Math.min(1, (now - this.t0) / (S.fx.dur || 2000));
       const e = 0.5 * t + 0.5 * (t < 0.5 ? 2 * t * t : 1 - 2 * (1 - t) * (1 - t));   // gentle ease in and out
       this.prevP = this.p;
       this.p = vanishing ? P_MIN + e * (P_MAX - P_MIN) : P_MAX - e * (P_MAX - P_MIN);
@@ -334,7 +371,7 @@
         const vis = smooth((th - p) / BAND + 0.5);
         a[i * 4 + 3] = m * vis * 255;
         // a few fine specks where the body is melting right now
-        if (m > 0.6 && th >= lo && th < hi && Math.random() < 0.1) {
+        if (m > 0.6 && th >= lo && th < hi && Math.random() < 0.1 * (S.fx.dens || 1)) {
           const j = i * 4;
           this.spawn(i % WW, (i / WW) | 0, d[j], d[j + 1], d[j + 2], !vanishing);
         }

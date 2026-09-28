@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VanishCam — snap your fingers and vanish from Google Meet</title>
+  <meta name="description" content="VanishCam is a free Chrome extension that dissolves your camera feed into particles on a finger snap — you vanish from your own Google Meet video. 100% local, no server, no data sent.">
+  <meta property="og:title" content="VanishCam — snap and vanish from your video call">
+  <meta property="og:description" content="Free Chrome extension. Snap your fingers, dissolve into particles, come back when you snap again. Everything runs locally in your browser.">
+  <meta property="og:image" content="../assets/demo.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../icons/icon128.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================= NAV ======================= -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#top">
+      <img src="../icons/icon48.png" alt="" width="28" height="28">
+      <span>VanishCam</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#demo">Demo</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://github.com/jojin1709/VanishCam" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-primary" href="https://github.com/jojin1709/VanishCam/releases/latest" target="_blank" rel="noopener">Download</a>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" id="top">
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <img class="hero-icon" src="../icons/icon128.png" alt="VanishCam icon" width="104" height="104">
+      <h1>VanishCam</h1>
+      <p class="tagline">Snap your fingers and <span class="grad">vanish from your own video</span> in Google Meet.</p>
+      <p class="sub">You stay in the call — your picture just dissolves into particles and leaves an empty room behind, until you snap again.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://github.com/jojin1709/VanishCam/releases/latest" target="_blank" rel="noopener">⬇ Download ZIP</a>
+        <a class="btn btn-outline btn-lg" href="#demo">Watch it work</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">Free</span>
+        <span class="badge badge-green">100% local</span>
+        <span class="badge badge-green">No account</span>
+        <span class="badge badge-green">No data sent</span>
+        <span class="badge badge-amber">Chrome · Edge</span>
+      </div>
+    </div>
+    <div class="hero-fade" aria-hidden="true"></div>
+  </section>
+
+  <!-- ======================= DEMO ======================= -->
+  <section class="section" id="demo">
+    <div class="container">
+      <h2 class="reveal">See it in action</h2>
+      <p class="lead reveal">One snap to disappear. One snap to come back.</p>
+
+      <!-- ── MAIN DEMO VIDEO ─────────────────────────────────────────────
+           Drop your file at:  docs/videos/hero.mp4
+           (any format works; mp4/h.264 is the safest for all browsers)
+           Poster image:       docs/videos/hero-poster.jpg  (optional)
+      ─────────────────────────────────────────────────────────────────── -->
+      <div class="video-card reveal" data-video-slot>
+        <video controls playsinline preload="metadata" poster="">
+          <source src="videos/hero.mp4" type="video/mp4">
+        </video>
+        <div class="video-fallback">
+          <span>🎬</span>
+          <p>Demo video coming soon</p>
+        </div>
+      </div>
+
+      <!-- ── EXTRA CLIPS (optional, delete this block if unused) ─────────
+           docs/videos/clip-1.mp4  ·  docs/videos/clip-2.mp4
+      ─────────────────────────────────────────────────────────────────── -->
+      <div class="video-grid">
+        <div class="video-card reveal" data-video-slot>
+          <video controls playsinline preload="metadata">
+            <source src="videos/clip-1.mp4" type="video/mp4">
+          </video>
+          <div class="video-fallback"><span>🎬</span><p>Clip 1 — coming soon</p></div>
+        </div>
+        <div class="video-card reveal" data-video-slot>
+          <video controls playsinline preload="metadata">
+            <source src="videos/clip-2.mp4" type="video/mp4">
+          </video>
+          <div class="video-fallback"><span>🎬</span><p>Clip 2 — coming soon</p></div>
+        </div>
+      </div>
+
+      <!-- Screenshot-style showcase (static, always visible) -->
+      <figure class="shot reveal">
+        <img src="../assets/demo.png" alt="VanishCam before and after: the person dissolves into particles, the empty room stays" loading="lazy">
+        <figcaption>Before → snap! → after. The empty room is captured by you, one click.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= FEATURES ======================= -->
+  <section class="section section-alt" id="features">
+    <div class="container">
+      <h2 class="reveal">Why VanishCam</h2>
+      <div class="grid">
+        <article class="card reveal">
+          <div class="card-ico">👆</div>
+          <h3>Snap to vanish</h3>
+          <p>A sharp finger snap dissolves your picture into particles. Snap again to come back — button and hotkey work too.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-ico">📷</div>
+          <h3>Empty-room capture</h3>
+          <p>One click takes a photo of your room while you step out of frame. That photo is what you vanish into.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-ico">🔒</div>
+          <h3>100% local</h3>
+          <p>No server, no account, no telemetry. Camera frames and mic audio never leave your browser.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-ico">🎚</div>
+          <h3>Full control</h3>
+          <p>Snap sensitivity, dissolve duration and particle amount — all adjustable, all remembered.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-ico">⌨️</div>
+          <h3>Global shortcuts</h3>
+          <p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> to vanish, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> to hide the panel — even from another tab.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-ico">🌍</div>
+          <h3>English · Deutsch · Español</h3>
+          <p>The panel speaks your browser language automatically.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= HOW IT WORKS ======================= -->
+  <section class="section" id="how">
+    <div class="container">
+      <h2 class="reveal">How it works</h2>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-n">1</span>
+          <div>
+            <h3>Capture the room</h3>
+            <p>Click <code>capture empty room</code>, step out of frame for 3 seconds, sit back down. Status shows <b>armed</b>.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-n">2</span>
+          <div>
+            <h3>Snap your fingers</h3>
+            <p>The detector hears the sharp transient, compares your live frame with the saved room, and dissolves only you into particles.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-n">3</span>
+          <div>
+            <h3>Snap to return</h3>
+            <p>Particles swirl back and reassemble into you. The whole call never noticed — you never left the meeting.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ======================= INSTALL ======================= -->
+  <section class="section section-alt" id="install">
+    <div class="container narrow">
+      <h2 class="reveal">Install in 2 minutes</h2>
+      <div class="install reveal">
+        <div class="install-step"><b>1.</b> Download the <a href="https://github.com/jojin1709/VanishCam/releases/latest" target="_blank" rel="noopener">VanishCam ZIP</a> and extract it.</div>
+        <div class="install-step"><b>2.</b> Open <code>chrome://extensions</code> in Chrome or Edge.</div>
+        <div class="install-step"><b>3.</b> Turn on <b>Developer mode</b> (top right).</div>
+        <div class="install-step"><b>4.</b> Click <b>Load unpacked</b> and select the extracted folder.</div>
+        <div class="install-step"><b>5.</b> Open Google Meet — the pill button appears in the top left. Done.</div>
+      </div>
+      <p class="reveal muted">Why developer mode? VanishCam isn't on the Chrome Web Store yet — this is Chrome's standard way to load extensions from outside the store.</p>
+      <div class="hero-cta reveal center">
+        <a class="btn btn-primary btn-lg" href="https://github.com/jojin1709/VanishCam/releases/latest" target="_blank" rel="noopener">⬇ Get VanishCam</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FAQ ======================= -->
+  <section class="section" id="faq">
+    <div class="container narrow">
+      <h2 class="reveal">FAQ</h2>
+      <details class="faq reveal">
+        <summary>Does any video or audio leave my computer?</summary>
+        <p>No. Everything runs inside the Meet tab. There is no server, no account and no analytics. The microphone is only used to listen for the snap — the audio is never stored or sent.</p>
+      </details>
+      <details class="faq reveal">
+        <summary>It doesn't react to my snaps.</summary>
+        <p>Open the panel (click the status text) and move the <b>snap sensitivity</b> slider to the right. If it triggers while you talk, move it left.</p>
+      </details>
+      <details class="faq reveal">
+        <summary>The disappear looks messy or leaves a trace.</summary>
+        <p>Your lighting changed since you captured the room. Click <b>capture empty room</b> again right before the call, and keep the camera still.</p>
+      </details>
+      <details class="faq reveal">
+        <summary>Does it work with Meet's background blur or filters?</summary>
+        <p>Turn them off. VanishCam compares your live frame with the empty-room photo — Meet's own video effects change the frames and break the mask.</p>
+      </details>
+      <details class="faq reveal">
+        <summary>Which browsers are supported?</summary>
+        <p>Chrome 111+ and other Chromium browsers such as Edge and Brave. Firefox is not supported (it lacks the MAIN-world content script API this uses).</p>
+      </details>
+      <details class="faq reveal">
+        <summary>Is it free? Can I share it?</summary>
+        <p>Free to download and use personally. The code is public but <b>all rights reserved</b> — see <a href="https://github.com/jojin1709/VanishCam/blob/main/LICENSE.txt" target="_blank" rel="noopener">LICENSE.txt</a> before reusing or redistributing anything.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ======================= CTA ======================= -->
+  <section class="cta">
+    <div class="container center">
+      <h2 class="reveal">Ready to disappear?</h2>
+      <p class="lead reveal">Download, load unpacked, snap. That's the whole setup.</p>
+      <div class="hero-cta reveal center">
+        <a class="btn btn-primary btn-lg" href="https://github.com/jojin1709/VanishCam/releases/latest" target="_blank" rel="noopener">⬇ Download ZIP</a>
+        <a class="btn btn-outline btn-lg" href="https://github.com/jojin1709/VanishCam" target="_blank" rel="noopener">★ Star on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="../icons/icon48.png" alt="" width="26" height="26">
+          <span>VanishCam</span>
+        </div>
+        <p class="muted">Snap to vanish. Everything runs locally in your browser.</p>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <a href="https://github.com/jojin1709/VanishCam" target="_blank" rel="noopener">Source code</a>
+        <a href="https://github.com/jojin1709/VanishCam/releases" target="_blank" rel="noopener">Releases</a>
+        <a href="https://github.com/jojin1709/VanishCam/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+        <a href="https://github.com/jojin1709/VanishCam/blob/main/LICENSE.txt" target="_blank" rel="noopener">License</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="https://github.com/jojin1709/VanishCam/issues" target="_blank" rel="noopener">Report a bug</a>
+        <a href="https://github.com/jojin1709/VanishCam/discussions" target="_blank" rel="noopener">Discussions</a>
+        <a href="https://github.com/jojin1709/VanishCam/security/advisories/new" target="_blank" rel="noopener">Security</a>
+        <a href="https://github.com/sponsors/jojin1709" target="_blank" rel="noopener">Sponsor</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 <b>JOJIN JOHN</b> — all rights reserved.</p>
+      <p class="muted">Use it only on your own camera feed, in meetings you're part of.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
