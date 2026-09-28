@@ -18,3 +18,6 @@ dist/
 
 # local notes
 *.local
+
+# raw screen recordings (processed copies live in docs/videos/)
+video/

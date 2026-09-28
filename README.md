@@ -44,6 +44,12 @@
 ## See it in action
 
 <div align="center">
+<video src="docs/videos/hero.mp4" width="900" controls autoplay loop muted playsinline></video>
+<br/>
+<sub>Live demo — snap to vanish, snap again to return.</sub>
+</div>
+
+<div align="center">
 <img src="assets/demo.png" alt="VanishCam before and after: the person dissolves into particles, the empty room stays" width="900">
 <br/>
 <sub>Before → <b>snap!</b> → after. The left panel is you, the right panel is the empty room you captured.</sub>
