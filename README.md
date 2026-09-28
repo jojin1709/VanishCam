@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="icons/icon128.png" alt="VanishCam icon" width="110" height="110">
+
 # ✨ VanishCam
 
 ### Snap your fingers and vanish from your own video in Google Meet
@@ -8,21 +10,20 @@
 
 <br/>
 
-[![Manifest V3](https://img.shields.io/badge/Manifest-V3-0D1117?style=flat-square&labelColor=0D1117&logo=googlechrome&logoColor=7B61FF)](https://developer.chrome.com/docs/extensions/)
-[![Chrome](https://img.shields.io/badge/Chrome-100%2B-0D1117?style=flat-square&labelColor=0D1117&logo=googlechrome&logoColor=7B61FF)](https://www.google.com/chrome/)
-[![Local Only](https://img.shields.io/badge/100%25-Local-0D1117?style=flat-square&labelColor=0D1117&color=2EA043)](#privacy)
-[![No Server](https://img.shields.io/badge/No-Cloud_No_Account-0D1117?style=flat-square&labelColor=0D1117&color=2EA043)](#privacy)
-[![Privacy](https://img.shields.io/badge/Zero-Data_Sent-0D1117?style=flat-square&labelColor=0D1117&color=2EA043)](#privacy)
-[![License](https://img.shields.io/badge/All_Rights_Reserved-0D1117?style=flat-square&labelColor=0D1117&color=7B61FF)](#license)
-[![Private](https://img.shields.io/badge/No-Forks_Published-0D1117?style=flat-square&labelColor=0D1117&color=2EA043)](#license)
+[![Manifest](https://img.shields.io/badge/Manifest-V3-7B61FF?style=flat-square&labelColor=161B22)](https://developer.chrome.com/docs/extensions/)
+[![Chrome](https://img.shields.io/badge/Chrome-100%2B-7B61FF?style=flat-square&labelColor=161B22)](https://www.google.com/chrome/)
+[![Runs](https://img.shields.io/badge/Runs-100%25%20Local-2EA043?style=flat-square&labelColor=161B22)](#privacy)
+[![Data](https://img.shields.io/badge/Data-Never_Sent-2EA043?style=flat-square&labelColor=161B22)](#privacy)
+[![Server](https://img.shields.io/badge/Server-None-2EA043?style=flat-square&labelColor=161B22)](#privacy)
+[![License](https://img.shields.io/badge/License-All_Rights_Reserved-D29922?style=flat-square&labelColor=161B22)](#license)
 
 <br/>
 
-![](https://img.shields.io/badge/Snap-Trigger-7B61FF?style=for-the-badge&labelColor=0D1117)
-&nbsp;![](https://img.shields.io/badge/Particle-Dissolve-7B61FF?style=for-the-badge&labelColor=0D1117)
-&nbsp;![](https://img.shields.io/badge/Empty-Room-7B61FF?style=for-the-badge&labelColor=0D1117)
-&nbsp;![](https://img.shields.io/badge/Mic-Snap_Detect-7B61FF?style=for-the-badge&labelColor=0D1117)
-&nbsp;![](https://img.shields.io/badge/No-Server-7B61FF?style=for-the-badge&labelColor=0D1117)
+![](https://img.shields.io/badge/Trigger-Finger_Snap-7B61FF?style=for-the-badge&labelColor=161B22)
+&nbsp;![](https://img.shields.io/badge/Effect-Particle_Dissolve-7B61FF?style=for-the-badge&labelColor=161B22)
+&nbsp;![](https://img.shields.io/badge/Background-Empty_Room-7B61FF?style=for-the-badge&labelColor=161B22)
+&nbsp;![](https://img.shields.io/badge/Listener-Mic_Snap_Detect-7B61FF?style=for-the-badge&labelColor=161B22)
+&nbsp;![](https://img.shields.io/badge/Network-No_Server-2EA043?style=for-the-badge&labelColor=161B22)
 
 <br/>
 
@@ -134,7 +135,8 @@ snap-main/
 ├── manifest.json    ← Manifest V3 config — runs on meet.google.com only
 ├── inject.js        ← content-script glue: hooks into the Meet call UI
 ├── snapdetect.js    ← microphone listener: detects a sharp finger snap
-└── effect.js        ← particle engine: dissolves your frame into dust
+├── effect.js        ← particle engine: dissolves your frame into dust
+└── icons/           ← app icon in 16 / 32 / 48 / 128 px
 ```
 
 1. **Detect** — `snapdetect.js` listens to the microphone and watches for the sharp transient of a finger snap (tunable via the sensitivity slider). The audio is analysed in memory and never recorded.
