@@ -2,7 +2,7 @@
 
 <img src="icons/icon128.png" alt="VanishCam icon" width="110" height="110">
 
-# ✨ VanishCam
+# VanishCam
 
 ### Snap your fingers and vanish from your own video in Google Meet
 
